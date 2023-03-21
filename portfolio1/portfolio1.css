@@ -1,0 +1,248 @@
+@font-face {
+  font-family: 'custom';
+  src: url(./font/NanumSquareR.woff);
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: 'custom';
+}
+git a img {
+  display: block;
+  width: 100%;
+}
+h1 {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+h3 {
+  font-weight: bold;
+}
+
+p {
+  margin: 10px 0;
+}
+.btn {
+  background-color: #3a3a3a;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  padding: 10px;
+}
+.whole-container {
+  width: 100%;
+  height: 100%;
+}
+
+.bg {
+  width: 100%;
+  height: 100%;
+  padding: 60px;
+}
+.bg-gradient {
+  color: white;
+  background: linear-gradient(#4995db, #4558bd);
+  padding-bottom: 0;
+}
+
+.bg-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+}
+.bg-gradient-box {
+  display: flex;
+  justify-content: space-around;
+}
+
+.bg-gradient-header {
+  width: 60%;
+  max-width: 600px;
+}
+
+.bg-gradient-img-wrapper {
+  width: 40%;
+  max-width: 400px;
+}
+.bg-gradient-img-wrapper img {
+  width: 70%;
+  margin: auto;
+}
+
+.bg-white-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.bg-violet {
+  background: linear-gradient(#4e61c0, #3f4d96);
+
+  color: white;
+}
+.bg-violet-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.violet-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.items {
+  display: flex;
+}
+.item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+.item i {
+  background-color: white;
+  text-align: center;
+  padding-top: 22px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  color: #3f4d96;
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+
+.bg-white2 {
+  padding-top: 0;
+}
+.bg-division-box {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 80px;
+}
+.bg-division-header {
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bg-division-content {
+  margin: auto;
+  color: white;
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.bg-img-cover {
+  position: relative;
+  width: 50%;
+  height: 300px;
+  background-size: cover;
+}
+
+.bg-img-cover.bg-img1 {
+  background-image: url(./img/portfolio-1.jpg);
+}
+.bg-img-cover.bg-img2 {
+  background-image: url(./img/portfolio-2.jpg);
+}
+.bg-img-cover.bg-img3 {
+  background-image: url(./img/portfolio-3.jpg);
+}
+.bg-img-cover.bg-img4 {
+  background-image: url(./img/portfolio-4.jpg);
+}
+
+.bg-img-animation {
+  position: absolute;
+  border: 0px solid white;
+  width: 100%;
+  height: 300px;
+  transition: border 0.3s ease-in;
+}
+.bg-img-cover:hover .bg-img-animation {
+  border: 20px solid white;
+}
+.content-des {
+  padding: 40px;
+  margin: 40px;
+}
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+  max-width: 300px;
+  margin: auto;
+}
+
+.footer-items {
+  display: flex;
+}
+
+.footer-items i {
+  font-size: 20px;
+  border-radius: 50%;
+  padding: 15px;
+  margin: 20px;
+  color: white;
+  background-color: #3f4d96;
+}
+
+@media screen and (max-width: 992px) {
+  /* top */
+  .bg-gradient-box {
+    flex-direction: column;
+    align-items: center;
+  }
+  .bg-gradient-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .bg-gradient-img-wrapper img {
+    margin: auto;
+  }
+
+  /*  violet bg  */
+  .items {
+    flex-direction: column;
+  }
+
+  /*  what we can do */
+  .bg-division-box {
+    padding: 20px 0;
+  }
+
+  .bg-division-content {
+    flex-direction: column;
+  }
+  .bg-img-cover {
+    width: 400px;
+    height: 200px;
+    margin: auto;
+  }
+
+  .bg-img-animation {
+    position: absolute;
+    border: 0px solid white;
+    width: 400px;
+    height: 200px;
+    transition: border 0.3s ease-in;
+  }
+  .bg-img-cover:hover .bg-img-animation {
+    border: 20px solid white;
+  }
+}
