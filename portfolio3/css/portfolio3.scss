@@ -1,0 +1,221 @@
+// Color
+$purple: #494cb3;
+$blue: #007afe;
+$yellow: #ffcb55;
+$gray: #808080;
+$light-gray: #f9f9f9;
+$light-dark-gray: #e7e7e7;
+$light-green: #41c95b;
+$light-blue: #86cdea;
+$light-black: #333940;
+
+// Font-size
+$font-micro: 10px;
+$font-small: 14px;
+$font-regular: 16px;
+$font-medium: 18px;
+$font-large: 20px;
+
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background-color: $light-gray;
+}
+a {
+  text-decoration: none;
+}
+// sidebar *********************************
+.sidebar {
+  z-index: 5;
+  position: fixed;
+  font-size: $font-regular;
+  background-color: $purple;
+  width: 50px;
+  height: 100vh;
+  color: white;
+  .sidebar__item {
+    margin: 10px;
+    display: flex;
+    padding: 16px 8px;
+    justify-content: center;
+    position: relative;
+  }
+  transition: all 0.3s ease-in-out;
+  .sidebar__title {
+    position: absolute;
+    top: 0;
+    transform: translateY(50%) translate(-110px);
+    left: 40px;
+    transition: all 0.3s ease-in-out;
+  }
+  &:hover {
+    width: 150px;
+    .sidebar__title {
+      transform: translateY(50%) translateX(0);
+    }
+    .sidebar__item {
+      justify-content: flex-start;
+    }
+  }
+}
+
+// search-bar ******************************
+#container__custom {
+  margin-left: 50px;
+}
+.search-bar__custom {
+  input {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  button {
+    background-color: $light-black;
+    color: white;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  a {
+    color: $gray;
+    margin-right: 15px;
+    span {
+      padding: 0.2rem 0.35rem;
+    }
+  }
+  .visibility__custom {
+    visibility: hidden;
+    position: absolute;
+  }
+  .input__animation {
+    transition: width 1s;
+    &:focus {
+      width: 400px;
+    }
+  }
+}
+
+// main-section ***************************
+.main-section {
+  margin: 15px;
+}
+.main-section__items {
+  padding: 15px;
+}
+
+@mixin main-section__item($bg-color) {
+  padding: 15px;
+  align-items: center;
+  justify-content: space-around;
+  border-left: 3px solid $bg-color;
+  border-radius: 5px;
+  background-color: white;
+  h5 {
+    font-weight: bold;
+  }
+  i {
+    color: $gray;
+    font-size: 30px;
+  }
+  @media (max-width: 768px) {
+    margin-bottom: 10px;
+  }
+}
+.main-section__item--light-blue {
+  @include main-section__item($light-blue);
+}
+.main-section__item--light-green {
+  @include main-section__item($light-green);
+}
+.main-section__item--purple {
+  @include main-section__item($purple);
+}
+.main-section__item--yellow {
+  @include main-section__item($yellow);
+}
+
+// chart **********************************
+@mixin border-lr($direction, $px) {
+  border-#{$direction}-left-radius: $px;
+  border-#{$direction}-right-radius: $px;
+}
+.chart-container {
+  h6 {
+    margin-bottom: 0;
+    font-weight: 600;
+    margin-left: 10px;
+  }
+  ul {
+    padding: 0;
+  }
+}
+.chart-title {
+  background-color: #f9f9f9;
+  padding: 15px;
+  margin-bottom: 1px;
+  @include border-lr(top, 3px);
+  &.margin__custom {
+    margin: 0 1px;
+  }
+}
+
+.chart-item {
+  padding: 15px;
+  border: 1px solid $light-dark-gray;
+
+  &:first-child {
+    @include border-lr(top, 3px);
+  }
+  &:last-child {
+    @include border-lr(bottom, 3px);
+  }
+}
+// media query **************************************
+@media screen and (max-width: 768px) {
+  //  sidebar ************************************
+  .sidebar {
+    width: 40px;
+    font-size: $font-small;
+    &:hover {
+      width: 120px;
+      .sidebar__title {
+        transform: translateY(50%) translateX(-5px);
+      }
+    }
+  }
+
+  // nav *********************************************
+  #container__custom {
+    margin-left: 40px;
+    .search-bar__custom {
+      visibility: hidden;
+      position: relative;
+      > div {
+        position: absolute;
+      }
+      .visibility__custom {
+        visibility: visible;
+        top: 0;
+        right: 0;
+        button {
+          color: $gray;
+          border: 1px solid $gray;
+          background-color: #f8f9fa;
+          border-top-left-radius: 0.375rem;
+          border-bottom-left-radius: 0.375rem;
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+
+  // main-section *********************
+  .main-section {
+    h2 {
+      font-size: $font-large;
+    }
+  }
+  .chart-container {
+    margin: 20px 0;
+  }
+}
